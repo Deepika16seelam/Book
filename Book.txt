@@ -1,0 +1,45 @@
+-- Create a database
+CREATE DATABASE IF NOT EXISTS BooksDB;
+
+-- Use the created database
+USE BooksDB;
+
+-- Create a table named Books_and_Byte
+CREATE TABLE IF NOT EXISTS Books_and_Byte (
+    books_title VARCHAR(30),
+    author VARCHAR(30),
+    genre VARCHAR(30),
+    publication_year INT,
+    price INT
+);
+
+-- Insert data into the table
+INSERT INTO Books_and_Byte VALUES
+("10-Day Green Smoothie Cleanse", "jj smith", "Non Fiction", 2016, 661),
+("12 Rules for Life", "Jordan B. Peterson", "Non Fiction", 2018, 1240),
+("1984 (Signet Classics)", "George Orwell", "Fiction", 2017, 496),
+("All the Light We Cannot See", "Anthony Doerr", "Fiction", 2014, 1158),
+("Between the World and Me", "Ta-Nehisi Coates", "Non Fiction", 2015, 1180),
+("The God Of Small Things", "Arundhati Roy", "Non Fiction", 1997, 600),
+("The Wise And Other Wise", "Sudha Murthy", "Non Fiction", 2002, 170),
+("The Hidden Hindu", "Akshat Gupta", "mythological fiction", 2021, 160),
+("The Girl Who Drank the Moon", "Kelly Barnhill", "Fantasy fiction", 2016, 259),
+("Ghosts of The Silent Hills", "Anitha Krishan", "Supernatural fiction", 2020, 170);
+
+-- Select all records from the table
+SELECT * FROM Books_and_Byte;
+
+-- Select only the book titles from the table
+SELECT books_title FROM Books_and_Byte;
+
+-- Update the price of books where the price is greater than 600
+UPDATE Books_and_Byte SET price = 1100 WHERE price > 600;
+
+-- Select all records from the table after the update
+SELECT * FROM Books_and_Byte;
+
+-- Delete a specific book from the table
+DELETE FROM Books_and_Byte WHERE books_title = "10-Day Green Smoothie Cleanse";
+
+-- Select all records from the table after the deletion
+SELECT * FROM Books_and_Byte;
